@@ -1,0 +1,31 @@
+﻿@model Spice.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2 class="text-info">Category Details</h2>
+<br />
+
+<div class="backgroundWhite border">
+    <div class="row form-group">
+        <div class="col-2">
+            <label asp-for="Name"></label>
+        </div>
+        <div class="col-5">
+            <input asp-for="Name" class="form-control" readonly />
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-5 offset-2">
+            <partial name="_DetailsAndBackToListButton" model="Model.Id" />
+        </div>
+    </div>
+</div>
+
+
+
+
+

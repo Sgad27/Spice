@@ -1,0 +1,27 @@
+﻿@model string
+@using Spice.Utility
+
+<div class="container row border ml-1 backgroundWhiteBorder10Padding" style="width:100%">
+    @{
+        var img = "";
+        if (Model == Constants.OrderStatus.Submitted)
+            img = Constants.OrderStatus.Images.Submitted;
+        else if (Model == Constants.OrderStatus.InProcess)
+            img = Constants.OrderStatus.Images.InProcess;
+        else if (Model == Constants.OrderStatus.Ready)
+            img = Constants.OrderStatus.Images.Ready;
+        else if (Model == Constants.OrderStatus.Completed)
+            img = Constants.OrderStatus.Images.Completed;
+    }
+
+    @if (img == "")
+    {
+        <div>Order status not available.Either order is not placed yet or it's cancelled</div>
+    }
+    else
+    {
+        img = "/images/" + img;
+        <img src=@img width="100%" />
+    }
+
+</div>
